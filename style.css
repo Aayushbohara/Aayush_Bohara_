@@ -1,7 +1,7 @@
 /* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap');
 
-/* Global Reset and Basic Styling */
+/*  Basic Styling */
 * {
     margin: 0;
     padding: 0;
@@ -21,24 +21,24 @@
     --main-color: rgb(123, 0, 255); /* Main color */
 }
 
-/* HTML Styles */
+/* Styling the HTML */
 html {
     font-size: 62.5%; /* Sets base font size to 10px */
     overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
-/* Body Styles */
+/* Styling of box */
 body {
     background-color: var(--bg-color); /* Background color */
     color: var(--text-color); /* Text color */
 }
 
-/* Section Styles */
+/*  Styling of section */
 section {
     padding: 10rem 9% 2rem; /* Padding for sections */
 }
 
-/* Header Styles */
+/* Styling of header */
 .header {
     position: fixed; /* Fixed position */
     top: 0; /* Align to top */
@@ -52,7 +52,7 @@ section {
     z-index: 105; /* Z-index for stacking */
 }
 
-/* Logo Styles */
+/* styling og logo*/
 .logo {
     font-size: 36px; /* Font size */
     color: var(--main-color); /* Main color */
@@ -60,19 +60,17 @@ section {
     cursor: default; /* Default cursor */
 }
 
-/* Navbar Styles */
+/* styling of the navbar */
 .navbar {
-    display: flex; /* Flex container */
-    justify-content: center; /* Center items */
-    flex-direction: column; /* Column direction */
-    align-items: center; /* Center items */
-    position: absolute; /* Absolute position */
-    top: 75px; /* Distance from top */
-    left: -100%; /* Hidden by default */
-    width: 100%; /* Full width */
-    height: 100vh; /* Full height */
-    background-color: var(--bg-color); /* Background color */
-    transition: all 0.5s ease; /* Transition effect */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    
+    top: 75px; 
+    width: 100%; 
+    height: 100vh; 
+    background-color: var(--bg-color);
+    transition: all 0.5s ease; 
 }
 
 /* Navbar Active State */
@@ -159,51 +157,29 @@ section {
     line-height: 3.6; /* Line height */
 }
 
-/* Styling for nth-last-of-type */
+
 .home-content h3:nth-last-of-type(2) {
-    margin-bottom: -0.5rem; /* Bottom margin */
+    margin-bottom: -0.5rem; 
 }
 
-/* Main Color Span */
+/* Main Color  */
 span {
-    color: var(--main-color); /* Main color */
+    color: var(--main-color); 
 }
 
-/* Home Content Heading Styles */
+/*  Heading Styles content of home */
 .home-content h1 {
     font-size: 5rem; /* Font size */
     font-weight: 680; /* Font weight */
     line-height: 1.1; /* Line height */
 }
 
-/* Home Content Paragraph Styles */
+/* Paragraph style of home */
 .home-content p {
     font-size: 2rem; /* Font size */
 }
 
-/* Social Media Icons Styles */
-.social-media a {
-    display: inline-flex; /* Inline flex container */
-    justify-content: center; /* Center content */
-    align-items: center; /* Center items */
-    width: 4rem; /* Width */
-    height: 4rem; /* Height */
-    background: transparent; /* Transparent background */
-    border: .1rem solid var(--main-color); /* Border */
-    border-radius: 80%; /* Border radius */
-    font-size: 3rem; /* Font size */
-    color: var(--main-color); /* Main color */
-    margin: 3rem 2rem 2rem 0.5; /* Margin */
-}
-
-/* Social Media Icons Hover Styles */
-.social-media a:hover {
-    background-color: var(--main-color); /* Main color on hover */
-    color: var(--second-bg-color); /* Secondary background color */
-    box-shadow: 0 0 rem var(--main-color); /* Box shadow */
-}
-
-/* project Section Styles */
+/* Styling of the project Section */
 .project {
     background: var(--second-bg-color);
     scroll-behavior: smooth;
@@ -215,7 +191,7 @@ span {
 
 .project-content {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 3rem;
 }
@@ -226,41 +202,47 @@ span {
     box-shadow: 0 0 1rem var(--second-bg-color);
     overflow: hidden;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1.2s ease; /* Increased duration for smoother transition */
 }
 
 .project img {
- width: 550px;
- transition: .9s ease;
-
+    width: 100%;
+    transition: transform 1.2s ease; /* Increased duration for smoother transition */
 }
 
-.project:hover-box img {
-    transform: scale(1.1);
+.project-content .project:hover img {
+    transform: scale(1.2); /* Slightly increased scale for a more pronounced effect */
 }
 
 .project .project-layer {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 105%;
-    height: 105%;
-    background: linear-gradient(rgba(0,0,0,0),var(--main-color));
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), var(--main-color));
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
     padding: 0 6rem;
+    opacity: 0;
+    transition: opacity 1.2s ease, transform 1.2s ease; /* Increased duration for smoother transition */
     transform: translateY(100%);
-    transition: .8s ease;
 }
 
-.project:hover .project-layer {
+.project-content .project:hover .project-layer {
+    opacity: 1;
     transform: translateY(0);
 }
 
 .project-layer h4 {
-    font-size: 5rem;
+    font-size: 2rem;
+    margin: 0;
 }
 
 .project-layer p {
@@ -282,6 +264,7 @@ span {
     font-size: 1rem;
     color: var(--second-bg-color);
 }
+
 
 /* Contact Section Heading Styles */
 .contact h2 {
@@ -328,6 +311,36 @@ span {
     background: var(--main-color); /* Main color background */
     border-radius: 4rem; /* Border radius */
     box-shadow: 0 0 1rem var(--main-color); /* Box shadow */
+}
+
+/* Social Media Icons Styles */
+.social-media a {
+    display: inline-flex; /* Inline flex container */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center items */
+    width: 4rem; /* Width */
+    height: 4rem; /* Height */
+    background: transparent; /* Transparent background */
+    border: .1rem solid var(--main-color); /* Border */
+    border-radius: 80%; /* Border radius */
+    font-size: 3rem; /* Font size */
+    color: var(--main-color); /* Main color */
+    margin: 3rem 2rem 2rem 0.5rem; /* Margin */
+}
+
+/* Social Media Icons Hover Styles */
+.social-media a:hover {
+    background-color: var(--main-color); /* Main color on hover */
+    color: var(--second-bg-color); /* Secondary background color */
+    box-shadow: 0 0 rem var(--main-color); /* Box shadow */
+}
+
+/* Contact Info Styles */
+.contact-info {
+    text-align: center; /* Center text */
+    margin-top: 2rem; /* Top margin */
+    font-size: 1.6rem; /* Font size */
+    color: var(--text-color); /* Text color */
 }
 
 /* videoDemo Section Styles */

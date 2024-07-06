@@ -1,49 +1,53 @@
-<!DOCTYPE html> <!-- Document type declaration -->
-<html lang="en"> <!-- Start of HTML document with language set to English -->
-  <head>
-    <title>portfolio</title> <!-- Title of the webpage -->
-    <meta charset="UTF-8"> <!-- Character encoding for UTF-8 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility with IE -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport settings for responsive design -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Boxicons CSS library -->
+    <!-- Boxicons CSS library linking for icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- Custom CSS file -->
-    <link rel="stylesheet" href="style.css"> <!-- Linking external stylesheet -->
-  </head>
-  <body>
-    <header class="header"> <!-- Header section of the webpage -->
-      <a href="#" class="logo">Portfolio</a> <!-- Logo or site name -->
-      <nav class="navbar"> <!-- Navigation links -->
-        <a href="index.html">Home</a> <!-- Link to home page -->
-        <a href="project.html">Project</a> <!-- Link to project page -->
-        <a href="contact.html">Contact</a> <!-- Link to contact page -->
-        <a href="videoDemo.html">VideoDemo</a> <!-- Link to video demo page -->
-        <a href="sitereport.html">SiteReport</a> <!-- Link to site report page -->
-      </nav>
+    
+    <!-- custom CSS file linking for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header section -->
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="project.html">Project</a>
+            <a href="contact.html">Contact</a>
+            <a href="videoDemo.html">VideoDemo</a>
+            <a href="sitereport.html">SiteReport</a>
+        </nav>
     </header>
 
-    <!-- Starting the section for contact -->
+    <!-- Starting Contact section -->
     <section class="contact" id="contact">
-      <h2 class="heading">Connect with <span>Me</span></h2> <!-- Section heading -->
-      
-
-      <form action="#"> <!-- Contact form -->
-        <div class="input-box">
-          <input type="text" placeholder="First Name"> <!-- First name input -->
-          <input type="email" placeholder="Last Name"> <!-- Last name input -->
-       
-          <input type="number" placeholder="Phone Number"> <!-- Phone number input -->
-          <input type="text" placeholder="Email "> <!-- Email input -->
+        <h2 class="heading">Connect with <span>Me</span></h2>
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="First Name">
+                <input type="email" placeholder="Last Name">
+                <input type="number" placeholder="Phone Number">
+                <input type="text" placeholder="Email">
+            </div>
+            <textarea name="alphabets" id="name" cols="31" rows="5" placeholder="Your Queries"></textarea>
+            <input type="submit" value="Send" class="btn">
+        </form>
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
         </div>
-        <textarea name="alphabets" id="name" cols="31" rows="5" placeholder="Your Queries"></textarea> <!-- Textarea for queries -->
-        <input type="submit" value="Send " class="btn"> <!-- Submit button -->
-        
-      </form>
-      
+        <div class="contact-info">
+            <p>aayushbohara05@gmail.com</p>
+            <p>+9779872635492</p>
+        </div>
     </section>
-    <!-- Ending the section for contact -->
-
-  </body>
+    <!-- Ending the contact section -->
+</body>
 </html>
