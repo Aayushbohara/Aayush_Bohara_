@@ -1,25 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Document type declaration -->
+<html lang="en"> <!-- Start of HTML document with language set to English -->
   <head>
-    <title>portfolio</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+    <title>portfolio</title> <!-- Title of the webpage -->
+    <meta charset="UTF-8"> <!-- Character encoding for UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility with IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport settings for responsive design -->
 
-   
+    <!-- Boxicons CSS library -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <!--custom  css-->
-    <link rel="stylesheet" href="style.css">
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" href="style.css"> <!-- Linking external stylesheet -->
   </head>
   <body>
-    <header class="header">
-      <a href="#" class="logo">Portfolio</a>
-      <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-        <a href="workexperience.html">WorkExperience</a>
-        <a href="sitereport.html">SiteReport</a>
+    <header class="header"> <!-- Header section of the webpage -->
+      <a href="#" class="logo">Portfolio</a> <!-- Logo or site name -->
+      <nav class="navbar"> <!-- Navigation links -->
+        <a href="index.html">Home</a> <!-- Link to home page -->
+        <a href="project.html">Project</a> <!-- Link to project page -->
+        <a href="contact.html">Contact</a> <!-- Link to contact page -->
+        <a href="videoDemo.html">VideoDemo</a> <!-- Link to video demo page -->
+        <a href="sitereport.html">SiteReport</a> <!-- Link to site report page -->
       </nav>
     </header>
+
+    <!-- Starting the section for contact -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Connect with <span>Me</span></h2> <!-- Section heading -->
+      
+
+      <form action="#"> <!-- Contact form -->
+        <div class="input-box">
+          <input type="text" placeholder="First Name"> <!-- First name input -->
+          <input type="email" placeholder="Last Name"> <!-- Last name input -->
+       
+          <input type="number" placeholder="Phone Number"> <!-- Phone number input -->
+          <input type="text" placeholder="Email "> <!-- Email input -->
+        </div>
+        <textarea name="alphabets" id="name" cols="31" rows="5" placeholder="Your Queries"></textarea> <!-- Textarea for queries -->
+        <input type="submit" value="Send " class="btn"> <!-- Submit button -->
+        
+      </form>
+      
+    </section>
+    <!-- Ending the section for contact -->
+
+  </body>
+</html>

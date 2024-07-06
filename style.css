@@ -1,21 +1,553 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap');
+
+/* Global Reset and Basic Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
-
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif; /* Default font */
 }
+
+/* Root Variables for Colors */
+:root {
+    --bg-color: #171417; /* Background color */
+    --second-bg-color: #000000; /* Secondary background color */
+    --text-color: #fff; /* Text color */
+    --main-color: rgb(123, 0, 255); /* Main color */
+}
+
+/* HTML Styles */
+html {
+    font-size: 62.5%; /* Sets base font size to 10px */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Body Styles */
 body {
-    background: black;
-    color: blueviolet;
-    
+    background-color: var(--bg-color); /* Background color */
+    color: var(--text-color); /* Text color */
 }
-#header {
-   
-    width: 100%;
-    height: 100vh;
-    background-image:url(images/qs811igzbabl1m0o.jpg) ;
-   background-size:cover;
-   background-position:center;
 
+/* Section Styles */
+section {
+    padding: 10rem 9% 2rem; /* Padding for sections */
+}
+
+/* Header Styles */
+.header {
+    position: fixed; /* Fixed position */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    width: 105%; /* Extend slightly beyond viewport width */
+    padding: 2rem 9%; /* Padding */
+    background: var(--bg-color); /* Background color */
+    display: flex; /* Flex container */
+    justify-content: space-between; /* Space between items */
+    align-items: self-start; /* Align items */
+    z-index: 105; /* Z-index for stacking */
+}
+
+/* Logo Styles */
+.logo {
+    font-size: 36px; /* Font size */
+    color: var(--main-color); /* Main color */
+    font-weight: 605; /* Font weight */
+    cursor: default; /* Default cursor */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex; /* Flex container */
+    justify-content: center; /* Center items */
+    flex-direction: column; /* Column direction */
+    align-items: center; /* Center items */
+    position: absolute; /* Absolute position */
+    top: 75px; /* Distance from top */
+    left: -100%; /* Hidden by default */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    background-color: var(--bg-color); /* Background color */
+    transition: all 0.5s ease; /* Transition effect */
+}
+
+/* Navbar Active State */
+.navbar.active {
+    left: 0; /* Show navbar */
+}
+
+/* Navbar Links Styles */
+.navbar a {
+    display: block; /* Block display */
+    font-size: 18px; /* Font size */
+    color: var(--text-color); /* Text color */
+    padding: 10px; /* Padding */
+    border: 2px solid var(--main-color); /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    margin: 5px 0; /* Margin */
+    background-color: var(--second-bg-color); /* Background color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
+}
+
+/* Navbar Links Hover and Active Styles */
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color); /* Main color on hover/active */
+    background-color: var(--bg-color); /* Background color on hover/active */
+}
+
+/* Menu Icon Styles */
+#menu-icon {
+    font-size: 3.6rem; /* Font size */
+    color: var(--text-color); /* Text color */
+    display: flex; /* Flex container */
+    flex-direction: column; /* Column direction */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center items */
+    width: 30px; /* Width */
+    height: 30px; /* Height */
+    padding: 0; /* Padding */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Show Navbar on Header Hover/Focus */
+.header:hover .navbar,
+.header:focus-within .navbar {
+    left: 0; /* Show navbar */
+}
+
+/* Media Query for Medium Screens */
+@media screen and (min-width: 768px) {
+    .navbar {
+        position: static; /* Static position */
+        flex-direction: row; /* Row direction */
+        justify-content: flex-end; /* Align items to right */
+        align-items: center; /* Center items */
+        height: auto; /* Auto height */
+        background-color: transparent; /* Transparent background */
+        left: 0; /* Reset left position */
+        width: auto; /* Auto width */
+    }
+
+    .navbar a {
+        font-size: 17px; /* Font size */
+        padding: 0 21px; /* Padding */
+        margin: 0 10px; /* Margin */
+    }
+}
+
+
+/* Home Image Styles */
+.home-image img {
+    width: 320px; /* Image width */
+}
+
+/* Home Image Styles */
+.home-image img {
+    width: 320px; /* Image width */
+}
+
+/* Home Content Styles */
+.home-content h3 {
+    font-size: 3.5rem; /* Font size */
+    font-weight: 710; /* Font weight */
+    line-height: 3.6; /* Line height */
+}
+
+/* Styling for nth-last-of-type */
+.home-content h3:nth-last-of-type(2) {
+    margin-bottom: -0.5rem; /* Bottom margin */
+}
+
+/* Main Color Span */
+span {
+    color: var(--main-color); /* Main color */
+}
+
+/* Home Content Heading Styles */
+.home-content h1 {
+    font-size: 5rem; /* Font size */
+    font-weight: 680; /* Font weight */
+    line-height: 1.1; /* Line height */
+}
+
+/* Home Content Paragraph Styles */
+.home-content p {
+    font-size: 2rem; /* Font size */
+}
+
+/* Social Media Icons Styles */
+.social-media a {
+    display: inline-flex; /* Inline flex container */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center items */
+    width: 4rem; /* Width */
+    height: 4rem; /* Height */
+    background: transparent; /* Transparent background */
+    border: .1rem solid var(--main-color); /* Border */
+    border-radius: 80%; /* Border radius */
+    font-size: 3rem; /* Font size */
+    color: var(--main-color); /* Main color */
+    margin: 3rem 2rem 2rem 0.5; /* Margin */
+}
+
+/* Social Media Icons Hover Styles */
+.social-media a:hover {
+    background-color: var(--main-color); /* Main color on hover */
+    color: var(--second-bg-color); /* Secondary background color */
+    box-shadow: 0 0 rem var(--main-color); /* Box shadow */
+}
+
+/* project Section Styles */
+.project {
+    background: var(--second-bg-color);
+    scroll-behavior: smooth;
+}
+
+.project h2 {
+    margin-bottom: 3rem;
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 3rem;
+}
+
+.project-content .project {
+    position: relative;
+    border-radius: 3rem;
+    box-shadow: 0 0 1rem var(--second-bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.project img {
+ width: 550px;
+ transition: .9s ease;
+
+}
+
+.project:hover-box img {
+    transform: scale(1.1);
+}
+
+.project .project-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 105%;
+    height: 105%;
+    background: linear-gradient(rgba(0,0,0,0),var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 6rem;
+    transform: translateY(100%);
+    transition: .8s ease;
+}
+
+.project:hover .project-layer {
+    transform: translateY(0);
+}
+
+.project-layer h4 {
+    font-size: 5rem;
+}
+
+.project-layer p {
+    font-size: 1.6rem;
+    margin: .2rem 0 1rem;
+}
+
+.project-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: var(--text-color);
+    border-radius: 60%;
+}
+
+.project-layer a i {
+    font-size: 1rem;
+    color: var(--second-bg-color);
+}
+
+/* Contact Section Heading Styles */
+.contact h2 {
+    margin-bottom: 2.5rem; /* Bottom margin */
+}
+
+/* Contact Form Styles */
+.contact form {
+    max-width: 70rem; /* Maximum width */
+    margin: 1rem auto; /* Margin */
+    text-align: center; /* Center text */
+    margin-bottom: 3rem; /* Bottom margin */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Contact Form Input Box Styles */
+.contact form .input-box {
+    display: flex; /* Flex container */
+    justify-content: space-between; /* Space between items */
+    flex-wrap: wrap; /* Wrap items */
+}
+
+/* Contact Form Input and Textarea Styles */
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%; /* Full width */
+    padding: 1.1rem; /* Padding */
+    font-size: 1.6rem; /* Font size */
+    color: var(--text-color); /* Text color */
+    background: var(--second-bg-color); /* Secondary background color */
+    border-radius: .6rem; /* Border radius */
+    margin: .4rem; /* Margin */
+}
+
+/* Contact Form Input Styles */
+.contact form .input-box input {
+    width: 49%; /* Width */
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block; /* Inline block */
+    padding: 1rem 2.8rem; /* Padding */
+    background: var(--main-color); /* Main color background */
+    border-radius: 4rem; /* Border radius */
+    box-shadow: 0 0 1rem var(--main-color); /* Box shadow */
+}
+
+/* videoDemo Section Styles */
+.videoDemo .about-col .about-right-col {
+    flex-basis: 60%; /* Flex basis */
+    display: grid; /* Grid display */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-gap: 2rem; /* Gap between items */
+    padding: 0 40px; /* Padding */
+}
+
+/* About Box Styles */
+.videoDemo .about-col .about-right-col .about-box {
+    border: 1px solid rgb(56, 55, 55); /* Border */
+    height: 200px; /* Height */
+    border-radius: 3px; /* Border radius */
+    padding: 30px; /* Padding */
+    transition: 0.6s; /* Transition effect */
+}
+
+/* About Box Heading Styles */
+.videoDemo .about-col .about-right-col .about-box h2 {
+    font-size: 45px; /* Font size */
+    font-family: var(--hFont); /* Custom font family */
+    color: var(--main-color); /* Main color */
+    font-weight: 700; /* Font weight */
+}
+
+/* About Box Paragraph Styles */
+.videoDemo .about-col .about-right-col .about-box p {
+    font-family: var(--pFont); /* Custom paragraph font */
+    color: white; /* Text color */
+    font-size: 15px; /* Font size */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0px; /* Letter spacing */
+}
+
+/* Hover Effect for About Box */
+.videoDemo .about-col .about-right-col .about-box:hover {
+    border: 1px solid var(--main-color); /* Border color on hover */
+    transform: translateY(-7px); /* Move up on hover */
+}
+
+/* Video Container Styles */
+.videoDemo .video-container {
+    display: flex; /* Flex display */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 20px auto; /* Margin */
+    max-width: 80%; /* Maximum width */
+    height: calc(100vh - 120px); /* Adjust the height to fit within the viewport */
+}
+
+/* Video Element Styles */
+.videoDemo .video-container video {
+    max-width: 100%; /* Full width */
+    max-height: 100%; /* Full height */
+    border: 0px solid #480538; /* Border */
+    border-radius: 8px; /* Border radius */
+    object-fit: contain; /* Ensure the video maintains its aspect ratio */
+}
+
+/* Site Report Paragraph Styles */
+.sitereport p {
+    font-size: 1.6rem; /* Font size */
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 36px; /* Font size */
+    margin: 0; /* Margin */
+}
+
+/* Main Styles for Content */
+main {
+    padding: 20px; /* Padding */
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 30px; /* Bottom margin */
+}
+
+/* Subheading Styles */
+h2 {
+    font-size: 24px; /* Font size */
+    margin-bottom: 10px; /* Bottom margin */
+}
+
+/* Paragraph Styles */
+p {
+    line-height: 1.5; /* Line height */
+    margin-bottom: 15px; /* Bottom margin */
+}
+
+/* Heading Styles */
+h3 {
+    font-size: 18px; /* Font size */
+    font-weight: 700; /* Font weight */
+}
+
+/* Image Styles */
+img {
+    width: 301px; /* Image width */
+    height: 301px; /* Image height */
+    margin-top: 11px; /* Top margin */
+    border-radius: 31px; /* Border radius */
+    box-shadow: 0px 5px black; /* Box shadow */
+}
+
+/* Images Section Styles */
+.images {
+    background-color: #323946; /* Background color */
+    box-shadow: 0 0 10px black; /* Box shadow */
+    border-radius: 20px; /* Border radius */
+    margin-bottom: 20px; /* Bottom margin */
+    padding: 10px; /* Padding */
+}
+
+/* Footer Styles */
+.footer {
+    display: flex; /* Flex container */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items */
+    flex-wrap: wrap; /* Wrap items */
+    padding: 2rem 9%; /* Padding */
+    background: var(--second-bg-color); /* Secondary background color */
+}
+
+/* Footer Text Styles */
+.footer-text p {
+    font-size: 1.6rem; /* Font size */
+}
+
+/* Footer Icon Styles */
+.footer-iconTop a {
+    display: inline-flex; /* Inline flex container */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center items */
+    padding: .8rem; /* Padding */
+    background: var(--main-color); /* Main color background */
+    border-radius: .8rem; /* Border radius */
+    transition: .5s ease; /* Transition effect */
+}
+
+/* Footer Icon Hover Styles */
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color); /* Box shadow on hover */
+}
+
+/* Footer Icon Styles */
+.footer-iconTop a i {
+    font-size: 2.4rem; /* Font size */
+    color: var(--second-bg-color); /* Secondary background color */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%; /* Decrease base font size */
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%; /* Padding */
+    }
+
+    section {
+        padding: 10rem 3% 2rem; /* Padding */
+    }
+
+    .footer {
+        padding: 2rem 3%; /* Padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .active {
+        display: block; /* Display block */
+    }
+
+    .navbar a {
+        display: block; /* Display block */
+        font-size: 2rem; /* Font size */
+        margin: 3rem 0; /* Margin */
+    }
+
+    .home {
+        flex-direction: column; /* Column direction */
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem; /* Font size */
+    }
+
+    .home-content h1 {
+        font-size: 5rem; /* Font size */
+    }
+
+    .project
+ h2 {
+        margin-bottom: 3rem; /* Bottom margin */
+    }
+
+    .project
+-content {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+}
+
+@media (max-width: 617px) {
+    .project
+-content {
+        grid-template-columns: 1fr; /* One column */
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%; /* Decrease base font size */
+    }
 }
